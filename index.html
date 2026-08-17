@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Michelle Mousavi</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <main class="entrance">
+
+        <!-- Main artwork -->
+
+        <img
+            src="images/entrance.jpg"
+            alt="Michelle Mousavi artwork">
+
+
+        <!-- Navigation trigger -->
+
+        <div class="navigation">
+
+            <!-- Artist name opens the menu -->
+
+            <button
+                class="artist-button"
+                onclick="openMenu()">
+
+                Michelle Mousavi
+
+            </button>
+
+
+            <!-- Menu symbol opens the menu -->
+
+            <button
+                class="menu-symbol"
+                onclick="openMenu()"
+                aria-label="Open menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             TOP MENU
+             ========================= -->
+
+        <nav class="top-menu" id="topMenu">
+
+            <!-- Artist name closes the menu -->
+
+            <button
+                class="menu-name"
+                onclick="closeMenu()">
+
+                Michelle Mousavi
+
+            </button>
+
+
+            <!-- Menu links -->
+
+            <div class="menu-links">
+
+                <a href="artworks.html">Artworks</a>
+
+                <a href="Exhibitions.html">Exhibitions</a>
+
+                <a href="cv.html">CV</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </nav>
+
+    </main>
+
+
+    <!-- =========================
+         MENU SCRIPT
+         ========================= -->
+
+    <script>
+
+        function openMenu() {
+
+            document
+                .getElementById("topMenu")
+                .classList.add("menu-open");
+
+        }
+
+
+        function closeMenu() {
+
+            document
+                .getElementById("topMenu")
+                .classList.remove("menu-open");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2452 @@
+
+/* =========================
+   BASIC
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #ffffff;
+    font-family: "Cormorant Garamond", serif;
+}
+
+
+/* =========================
+   ENTRANCE
+   ========================= */
+
+.entrance {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* =========================
+   MAIN IMAGE
+   ========================= */
+
+.entrance img {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+
+    object-fit: cover;
+    object-position: center center;
+
+    display: block;
+}
+
+
+/* =========================
+   SUBTLE WHITE FADE
+   ========================= */
+
+.entrance::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.navigation {
+    position: absolute;
+
+    top: 30px;
+    left: 35px;
+
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+/* =========================
+   ARTIST NAME BUTTON
+   ========================= */
+
+.artist-button {
+    all: unset;
+
+    position: relative;
+
+    color: white;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    font-weight: 300;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   MENU SYMBOL
+   ========================= */
+
+.menu-symbol {
+    all: unset;
+
+    width: 25px;
+    height: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+/* Menu lines */
+
+.menu-symbol span {
+    display: block;
+
+    width: 25px;
+    height: 1px;
+
+    background: white;
+
+    transition:
+        transform 0.45s ease,
+        opacity 0.45s ease;
+}
+
+
+/* =========================
+   MENU SYMBOL ANIMATION
+   ========================= */
+
+.navigation:hover .menu-symbol span:nth-child(1) {
+    transform: translateX(-14px);
+    transition-delay: 0s;
+}
+
+.navigation:hover .menu-symbol span:nth-child(2) {
+    transform: translateX(-14px);
+    transition-delay: 0.08s;
+}
+
+.navigation:hover .menu-symbol span:nth-child(3) {
+    transform: translateX(-14px);
+    transition-delay: 0.16s;
+}
+
+
+/* =========================
+   TOP MENU
+   ========================= */
+
+.top-menu {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 30;
+
+    width: 100%;
+
+    min-height: 82px;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-bottom: 0px solid #d8d8d8;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    transform: translateY(-100%);
+
+    transition:
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Menu opens */
+
+.top-menu.menu-open {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   NAME INSIDE MENU
+   ========================= */
+
+.menu-name {
+    all: unset;
+
+    color: #111111;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    font-weight: 300;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   MENU LINKS
+   ========================= */
+
+.menu-links {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 45px;
+
+    white-space: nowrap;
+}
+
+
+.menu-links a {
+    display: inline-block;
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    font-weight: 300;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    transition: opacity 0.3s ease;
+}
+
+
+.menu-links a:hover {
+    opacity: 0.45;
+}
+
+
+/* =================================================
+   TABLET
+   ================================================= */
+
+@media (max-width: 900px) {
+
+    .top-menu {
+        padding: 0 25px;
+    }
+
+    .menu-links {
+        gap: 25px;
+    }
+
+    .menu-links a {
+        font-size: 18px;
+    }
+
+    .menu-name {
+        font-size: 21px;
+    }
+}
+
+
+/* =================================================
+   PHONE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    /* Entrance navigation */
+
+    .navigation {
+        top: 20px;
+        left: 20px;
+
+        gap: 18px;
+    }
+
+
+    .artist-button {
+        font-size: 18px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .menu-symbol {
+        width: 22px;
+        height: 18px;
+
+        gap: 4px;
+    }
+
+
+    .menu-symbol span {
+        width: 22px;
+    }
+
+
+    /* -------------------------
+       Open menu
+       ------------------------- */
+
+    .top-menu {
+        min-height: 82px;
+
+        padding: 12px 20px;
+
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+
+        align-items: center;
+
+        column-gap: 20px;
+    }
+
+
+    /* Artist name */
+
+    .menu-name {
+        font-size: 17px;
+
+        letter-spacing: 1.2px;
+
+        white-space: nowrap;
+    }
+
+
+    /* -------------------------
+       Links become a 2 × 2 grid
+       ------------------------- */
+
+    .menu-links {
+
+        display: grid;
+
+        grid-template-columns: repeat(2, auto);
+
+        grid-template-rows: repeat(2, auto);
+
+        justify-content: end;
+
+        align-items: center;
+
+        column-gap: 18px;
+
+        row-gap: 2px;
+
+        white-space: normal;
+    }
+
+
+    .menu-links a {
+
+        display: block;
+
+        font-size: 15px;
+
+        line-height: 1.25;
+
+        letter-spacing: 0.5px;
+
+        white-space: nowrap;
+    }
+
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+   ================================================= */
+
+@media (max-width: 380px) {
+
+    .top-menu {
+        padding: 10px 15px;
+
+        column-gap: 12px;
+    }
+
+
+    .menu-name {
+        font-size: 15px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .menu-links {
+
+        column-gap: 12px;
+
+        row-gap: 1px;
+    }
+
+
+    .menu-links a {
+
+        font-size: 14px;
+
+        letter-spacing: 0.3px;
+    }
+
+}
+
+/* =================================================
+   CV PAGE
+   ================================================= */
+
+/* Gesamte CV-Seite */
+
+.cv-page {
+    background: #ffffff;
+    color: #111111;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =================================================
+   CV CONTENT
+   ================================================= */
+
+.cv-content {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 150px 60px 100px;
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    column-gap: 110px;
+
+    align-items: start;
+}
+
+
+/* =================================================
+   PORTRAIT
+   ================================================= */
+
+.cv-image {
+
+    width: 100%;
+
+    position: sticky;
+
+    top: 120px;
+}
+
+
+.cv-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: cover;
+}
+
+
+/* =================================================
+   CV TEXT
+   ================================================= */
+
+.cv-text {
+
+    max-width: 760px;
+}
+
+
+/* CV Überschrift */
+
+.cv-text h1 {
+
+    margin: 0 0 80px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+}
+
+
+/* =================================================
+   SECTIONS
+   ================================================= */
+
+.cv-section {
+
+    margin-bottom: 85px;
+}
+
+
+/* EDUCATION / SELECTED EXHIBITIONS */
+
+.cv-section h2 {
+
+    margin: 0 0 35px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+
+    text-transform: uppercase;
+}
+
+
+/* =================================================
+   SUBSECTIONS
+   ================================================= */
+
+.cv-subsection {
+
+    margin-top: 50px;
+}
+
+
+/* SOLO / GROUP EXHIBITIONS */
+
+.cv-subsection h3 {
+
+    margin: 0 0 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+}
+
+
+/* =================================================
+   CV ENTRIES
+   ================================================= */
+
+.cv-entry {
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    column-gap: 25px;
+
+    margin-bottom: 24px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    font-weight: 400;
+}
+
+
+/* Jahreszahlen */
+
+.cv-year {
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+}
+
+
+/* Beschreibung / Orte */
+
+.cv-description {
+
+    max-width: 650px;
+
+    font-weight: 400;
+}
+
+
+/* =================================================
+   AUSSTELLUNGSTITEL
+   ================================================= */
+
+/* Ausstellungstitel etwas stärker */
+
+.cv-description strong {
+
+    font-weight: 600;
+}
+
+
+/* Abstand zwischen mehreren Ausstellungen */
+
+.cv-description div {
+
+    margin-bottom: 8px;
+}
+
+
+.cv-description div:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =================================================
+   TABLET
+   ================================================= */
+
+@media (max-width: 900px) {
+
+    .cv-content {
+
+        grid-template-columns: 220px 1fr;
+
+        column-gap: 60px;
+
+        padding: 130px 35px 80px;
+    }
+
+
+    .cv-text h1 {
+
+        margin-bottom: 60px;
+
+        font-size: 28px;
+    }
+
+
+    .cv-entry {
+
+        grid-template-columns: 70px 1fr;
+
+        column-gap: 18px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =================================================
+   PHONE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .cv-content {
+
+        display: block;
+
+        padding: 110px 20px 60px;
+    }
+
+
+    /* Bild */
+
+    .cv-image {
+
+        position: relative;
+
+        top: auto;
+
+        width: 100%;
+
+        max-width: 280px;
+
+        margin-bottom: 55px;
+    }
+
+
+    /* CV Überschrift */
+
+    .cv-text h1 {
+
+        margin-bottom: 55px;
+
+        font-size: 27px;
+    }
+
+
+    /* Sections */
+
+    .cv-section {
+
+        margin-bottom: 60px;
+    }
+
+
+    .cv-section h2 {
+
+        margin-bottom: 30px;
+
+        font-size: 14px;
+    }
+
+
+    /* Subsections */
+
+    .cv-subsection {
+
+        margin-top: 40px;
+    }
+
+
+    /* Entries */
+
+    .cv-entry {
+
+        grid-template-columns: 55px 1fr;
+
+        column-gap: 15px;
+
+        margin-bottom: 22px;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+   ================================================= */
+
+@media (max-width: 380px) {
+
+    .cv-content {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .cv-entry {
+
+        grid-template-columns: 50px 1fr;
+
+        column-gap: 12px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =================================================
+   AUSSTELLUNGSTITEL
+   ================================================= */
+
+/*
+   Alles innerhalb von <strong>
+   wird leicht fett dargestellt.
+
+   Beispiel:
+
+   <strong>Chasing Clouds</strong><br>
+   Galerie Jakob
+
+   Ergebnis:
+
+   Chasing Clouds      ← leicht fett
+   Galerie Jakob       ← normal
+*/
+
+.cv-description strong {
+
+    font-weight: 500;
+}
+
+
+/* Abstand zwischen mehreren Ausstellungen */
+
+.cv-description div {
+
+    margin-bottom: 8px;
+}
+
+
+.cv-description div:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =================================================
+   TABLET
+   ================================================= */
+
+@media (max-width: 900px) {
+
+    .cv-content {
+
+        grid-template-columns: 220px 1fr;
+
+        column-gap: 60px;
+
+        padding: 130px 35px 80px;
+    }
+
+
+    .cv-text h1 {
+
+        margin-bottom: 60px;
+
+        font-size: 28px;
+    }
+
+
+    .cv-entry {
+
+        grid-template-columns: 70px 1fr;
+
+        column-gap: 18px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =================================================
+   PHONE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .cv-content {
+
+        display: block;
+
+        padding: 110px 20px 60px;
+    }
+
+
+    /* Bild */
+
+    .cv-image {
+
+        position: relative;
+
+        top: auto;
+
+        width: 100%;
+
+        max-width: 280px;
+
+        margin-bottom: 55px;
+    }
+
+
+    /* CV Überschrift */
+
+    .cv-text h1 {
+
+        margin-bottom: 55px;
+
+        font-size: 26px;
+    }
+
+
+    /* Sections */
+
+    .cv-section {
+
+        margin-bottom: 60px;
+    }
+
+
+    .cv-section h2 {
+
+        margin-bottom: 30px;
+
+        font-size: 11px;
+    }
+
+
+    /* Subsections */
+
+    .cv-subsection {
+
+        margin-top: 40px;
+    }
+
+
+    /* Entries */
+
+    .cv-entry {
+
+        grid-template-columns: 55px 1fr;
+
+        column-gap: 15px;
+
+        margin-bottom: 22px;
+
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+   ================================================= */
+
+@media (max-width: 380px) {
+
+    .cv-content {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .cv-entry {
+
+        grid-template-columns: 50px 1fr;
+
+        column-gap: 12px;
+
+        font-size: 12.5px;
+    }
+
+}
+/* =================================================
+   PERMANENT MENU ON INNER PAGES
+   ================================================= */
+
+.cv-top-menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    min-height: 82px;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-bottom: 0px solid #111111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transform: translateY(0);
+
+    transition: none;
+}
+@media (max-width: 650px) {
+
+    .cv-top-menu {
+        min-height: 82px;
+
+        padding: 12px 20px;
+
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+
+        align-items: center;
+
+        column-gap: 20px;
+    }
+
+}
+
+/* =================================================
+   CONTACT PAGE
+   ================================================= */
+
+.contact-page {
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =================================================
+   PERMANENT MENU
+   ================================================= */
+
+.contact-top-menu {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    min-height: 82px;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-bottom: 0px solid #111111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transform: translateY(0);
+
+    transition: none;
+}
+
+
+/* =================================================
+   CONTACT CONTENT
+   ================================================= */
+
+.contact-content {
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 220px 60px 100px;
+}
+
+
+/* =================================================
+   CONTACT HEADING
+   ================================================= */
+
+.contact-content h1 {
+
+    margin: 0 0 60px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+}
+
+
+/* =================================================
+   CONTACT DETAILS
+   ================================================= */
+
+.contact-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+}
+
+
+.contact-details a {
+
+    color: #111111;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        opacity 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.contact-details a:hover {
+
+    opacity: 0.5;
+
+    border-bottom-color: #111111;
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .contact-top-menu {
+
+        min-height: 82px;
+
+        padding: 12px 20px;
+
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+
+        align-items: center;
+
+        column-gap: 20px;
+    }
+
+
+    .contact-content {
+
+        padding: 150px 20px 60px;
+    }
+
+
+    .contact-content h1 {
+
+        margin-bottom: 45px;
+
+        font-size: 27px;
+    }
+
+
+    .contact-details {
+
+        gap: 16px;
+    }
+
+
+    .contact-details a {
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+   ================================================= */
+
+@media (max-width: 380px) {
+
+    .contact-content {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+}
+
+/* =================================================
+   ARTWORKS PAGE
+   ================================================= */
+
+.artworks-page {
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =================================================
+   PERMANENT MENU
+   ================================================= */
+
+.artworks-top-menu {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    min-height: 82px;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-bottom: 0px solid #111111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transform: translateY(0);
+
+    transition: none;
+}
+
+
+/* =================================================
+   ARTWORK CATEGORIES
+   ================================================= */
+
+.artworks-content {
+
+    width: 100%;
+
+    padding: 140px 40px 80px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+}
+
+
+.artwork-category {
+
+    position: relative;
+
+    display: block;
+
+    text-decoration: none;
+
+    color: #111111;
+
+    overflow: hidden;
+}
+
+
+/* Images */
+
+.artwork-category img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 70vh;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+
+/* Slight image movement */
+
+.artwork-category:hover img {
+
+    transform: scale(1.02);
+}
+
+
+/* =================================================
+   CATEGORY TITLE
+   ================================================= */
+
+.artwork-category-title {
+
+    position: absolute;
+
+    left: 30px;
+
+    bottom: 25px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+
+    transition: opacity 0.3s ease;
+}
+
+
+.artwork-category:hover .artwork-category-title {
+
+    opacity: 0.65;
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .artworks-top-menu {
+
+        min-height: 82px;
+
+        padding: 12px 20px;
+
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+
+        align-items: center;
+
+        column-gap: 20px;
+    }
+
+
+    .artworks-content {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 110px 20px 50px;
+    }
+
+
+    .artwork-category img {
+
+        height: 65vh;
+
+        min-height: 400px;
+    }
+
+
+    .artwork-category-title {
+
+        left: 20px;
+
+        bottom: 18px;
+
+        font-size: 22px;
+    }
+
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+   ================================================= */
+
+@media (max-width: 380px) {
+
+    .artworks-content {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .artwork-category img {
+
+        height: 55vh;
+
+        min-height: 350px;
+    }
+
+}
+
+
+/* =================================================
+   EXHIBITIONS PAGE
+   ================================================= */
+
+.exhibitions-page {
+
+    margin: 0;
+
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =================================================
+   TOP MENU
+   ================================================= */
+
+.artwork-inner-menu {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    min-height: 82px;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    border-bottom: 0px solid #111111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =================================================
+   GALLERY
+   ================================================= */
+
+.exhibitions-gallery {
+
+    width: 100%;
+
+    max-width: 1350px;
+
+    margin: 0 auto;
+
+    padding: 140px 50px 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 110px;
+}
+
+
+/* =================================================
+   ALL IMAGES
+   ================================================= */
+
+.exhibitions-gallery img {
+
+    display: block;
+
+    height: auto;
+
+    max-height: 620px;
+
+    object-fit: contain;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s ease;
+}
+
+
+
+
+
+/* =================================================
+   INDIVIDUAL IMAGE SIZES
+   ================================================= */
+
+/* Landscape / first image */
+
+.exhibitions-gallery {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 140px 0 120px;
+}
+
+
+/* =================================================
+   TABLET
+   ================================================= */
+
+@media (max-width: 900px) {
+
+    .exhibitions-gallery {
+
+        padding: 125px 30px 90px;
+
+        gap: 85px;
+    }
+
+
+    .exhibitions-gallery img {
+
+        max-height: 520px;
+    }
+
+
+    .exhibitions-gallery img:nth-child(1) {
+
+        width: 72%;
+    }
+
+
+    .exhibitions-gallery img:nth-child(2) {
+
+        width: 42%;
+    }
+
+
+    .exhibitions-gallery img:nth-child(3) {
+
+        width: 100%;
+
+        margin-left: 8%;
+    }
+
+
+    .exhibitions-gallery img:nth-child(4) {
+
+        width: 100%;
+    }
+
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .artwork-inner-menu {
+
+        min-height: 82px;
+
+        padding: 12px 20px;
+
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+
+        align-items: center;
+
+        column-gap: 20px;
+    }
+
+
+    .exhibitions-gallery {
+
+        padding: 110px 20px 70px;
+
+        gap: 65px;
+    }
+
+
+    .exhibitions-gallery img {
+
+        max-height: 450px;
+
+        width: auto;
+    }
+
+
+    /* Landscape */
+
+    .exhibitions-gallery img:nth-child(1) {
+
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+
+    /* Portrait */
+
+    .exhibitions-gallery img:nth-child(2) {
+
+        width: 62%;
+
+        margin-left: auto;
+    }
+
+
+    /* Third */
+
+    .exhibitions-gallery img:nth-child(3) {
+
+        width: 88%;
+
+        margin-left: 0;
+    }
+
+
+    /* Fourth */
+
+    .exhibitions-gallery img:nth-child(4) {
+
+        width: 68%;
+
+        margin-left: auto;
+    }
+
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+   ================================================= */
+
+@media (max-width: 380px) {
+
+    .exhibitions-gallery {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+        gap: 50px;
+    }
+
+
+    .exhibitions-gallery img {
+
+        max-height: 380px;
+    }
+
+
+    .exhibitions-gallery img:nth-child(1) {
+
+        width: 100%;
+    }
+
+
+    .exhibitions-gallery img:nth-child(2) {
+
+        width: 68%;
+    }
+
+
+    .exhibitions-gallery img:nth-child(3) {
+
+        width: 92%;
+    }
+
+
+    .exhibitions-gallery img:nth-child(4) {
+
+        width: 74%;
+    }
+
+}
+
+/* =================================================
+   LEGAL LINKS
+   ================================================= */
+
+.legal-links {
+
+    margin-top: 120px;
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.legal-links a {
+
+    color: #c8c8c8;
+
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    transition: color 0.3s ease;
+
+}
+
+
+.legal-links a:hover {
+
+    color: #999999;
+
+}
+/* =================================================
+   LEGAL / PRIVACY PAGES
+   ================================================= */
+
+.legal-page {
+
+    margin: 0;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+}
+
+
+/* =================================================
+   CONTENT
+   ================================================= */
+
+.legal-content {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 155px 40px 120px;
+
+}
+
+
+/* =================================================
+   MAIN TITLE
+   ================================================= */
+
+.legal-content > h1 {
+
+    margin: 0 0 90px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+}
+
+
+/* =================================================
+   SECTIONS
+   ================================================= */
+
+.legal-section {
+
+    margin-bottom: 65px;
+
+}
+
+
+.legal-section h2 {
+
+    margin: 0 0 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+.legal-section p {
+
+    max-width: 680px;
+
+    margin: 0 0 20px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    font-weight: 400;
+
+}
+
+
+/* =================================================
+   LINKS
+   ================================================= */
+
+.legal-section a {
+
+    color: #111111;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #d8d8d8;
+
+    transition: opacity 0.3s ease;
+
+}
+
+
+.legal-section a:hover {
+
+    opacity: 0.5;
+
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .artwork-inner-menu {
+
+        min-height: 82px;
+
+        padding: 12px 20px;
+
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+
+        align-items: center;
+
+        column-gap: 20px;
+
+    }
+
+
+    .legal-content {
+
+        padding: 115px 20px 80px;
+
+    }
+
+
+    .legal-content > h1 {
+
+        margin-bottom: 65px;
+
+        font-size: 27px;
+
+    }
+
+
+    .legal-section {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .legal-section h2 {
+
+        font-size: 14px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .legal-section p {
+
+        font-size: 14px;
+
+        line-height: 1.65;
+
+    }
+
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+   ================================================= */
+
+@media (max-width: 380px) {
+
+    .legal-content {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+    }
+
+
+    .legal-content > h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .legal-section p {
+
+        font-size: 13px;
+
+    }
+
+}
+
+/* =================================================
+   PAINTING GALLERY — REFINED ARTWORK OVERVIEW
+   ================================================= */
+
+.painting-year {
+    width: 100%;
+    margin: 0 0 120px;
+}
+
+.painting-year h2 {
+    margin: 0 0 45px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+
+    color: #777777;
+}
+
+/* =================================================
+   GRID
+   ================================================= */
+
+.painting-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 55px;
+    row-gap: 110px;
+
+    width: calc(100% - 40px);
+    max-width: 1250px;
+
+    margin-left: 40px;
+}
+
+
+
+/* =================================================
+   INDIVIDUAL WORK
+   ================================================= */
+
+.painting-item {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    cursor: pointer;
+
+    overflow: visible;
+}
+
+
+/* =================================================
+   IMAGE
+   ================================================= */
+
+.painting-item img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s ease;
+}
+
+
+/* Elegant, very subtle hover */
+
+.painting-item:hover img {
+    opacity: 0.88;
+    transform: scale(1.008);
+}
+
+
+/* =================================================
+   INFORMATION
+   Hidden in overview.
+   It is still present in HTML and used by JS
+   for the lightbox.
+   ================================================= */
+
+.painting-info {
+    display: none;
+}
+
+
+/* =================================================
+   TABLET
+   ================================================= */
+
+@media (max-width: 900px) {
+
+    .painting-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 35px;
+        row-gap: 75px;
+    }
+
+    .painting-year {
+        margin-bottom: 90px;
+    }
+
+    .painting-year h2 {
+        margin-bottom: 35px;
+        font-size: 14px;
+    }
+
+    .painting-item img {
+        max-height: 480px;
+    }
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .painting-year {
+        margin-bottom: 75px;
+    }
+
+    .painting-year h2 {
+        margin-bottom: 30px;
+
+        font-size: 14px;
+        letter-spacing: 0.06em;
+    }
+
+    .painting-grid {
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+        row-gap: 55px;
+
+        max-width: 600px;
+    }
+
+    .painting-item img {
+        max-height: none;
+    }
+}
+
+
+/* =================================================
+   VERY SMALL PHONES
+   ================================================= */
+
+@media (max-width: 380px) {
+
+    .painting-grid {
+        row-gap: 45px;
+    }
+
+    .painting-year h2 {
+        font-size: 13px;
+    }
+}
+/* =================================================
+   PAINTING LIGHTBOX
+   ================================================= */
+
+.painting-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+/* OPEN */
+
+.painting-lightbox.lightbox-open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =================================================
+   LIGHTBOX CONTENT
+   ================================================= */
+
+.lightbox-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    max-width: 1200px;
+
+    width: 100%;
+
+    max-height: 90vh;
+}
+
+
+/* =================================================
+   LARGE IMAGE
+   ================================================= */
+
+.lightbox-content > img {
+
+    display: block;
+
+    width: auto;
+
+    max-width: 72vw;
+
+    max-height: 82vh;
+
+    object-fit: contain;
+}
+
+
+/* =================================================
+   INFORMATION
+   ================================================= */
+
+.lightbox-info {
+
+    width: 210px;
+
+    flex-shrink: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #111111;
+}
+
+
+.lightbox-info h3 {
+
+    margin: 0 0 22px;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    line-height: 1.25;
+}
+
+
+.lightbox-info p {
+
+    margin: 0 0 7px;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    font-weight: 400;
+}
+
+
+/* =================================================
+   CLOSE
+   ================================================= */
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 35px;
+
+    border: none;
+
+    background: none;
+
+    padding: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 34px;
+
+    font-weight: 300;
+
+    color: #111111;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    transition: opacity 0.3s ease;
+}
+
+
+.lightbox-close:hover {
+
+    opacity: 0.45;
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .painting-lightbox {
+
+        padding: 30px 20px;
+
+        align-items: center;
+    }
+
+
+    .lightbox-content {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        max-height: 90vh;
+    }
+
+
+    .lightbox-content > img {
+
+        max-width: 88vw;
+
+        max-height: 62vh;
+
+        width: auto;
+    }
+
+
+    .lightbox-info {
+
+        width: 100%;
+
+        max-width: 88vw;
+
+        text-align: left;
+    }
+
+
+    .lightbox-info h3 {
+
+        margin-bottom: 10px;
+
+        font-size: 19px;
+    }
+
+
+    .lightbox-info p {
+
+        margin-bottom: 4px;
+
+        font-size: 13px;
+    }
+
+
+    .lightbox-close {
+
+        top: 18px;
+
+        right: 20px;
+
+        font-size: 30px;
+    }
+
+}
+/* =================================================
+   EXHIBITIONS — PERMANENT TOP MENU
+   ================================================= */
+
+.exhibitions-top-menu {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    min-height: 82px;
+
+    padding: 0 40px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transform: translateY(0);
+
+    transition: none;
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 650px) {
+
+    .exhibitions-top-menu {
+
+        min-height: 82px;
+
+        padding: 12px 20px;
+
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+
+        align-items: center;
+
+        column-gap: 20px;
+    }
+
+}
