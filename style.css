@@ -2133,6 +2133,11 @@ body {
     .painting-item img {
         max-height: none;
     }
+    @media (max-width: 650px) {
+    .painting-content {
+        padding-top: 160px;
+    }
+}
 }
 
 
