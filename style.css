@@ -1977,6 +1977,9 @@ body {
    PAINTING GALLERY — REFINED ARTWORK OVERVIEW
    ================================================= */
 
+.painting-content {
+    padding-top: 100px;
+}
 .painting-year {
     width: 100%;
     margin: 0 0 120px;
@@ -2124,6 +2127,7 @@ body {
         row-gap: 55px;
 
         max-width: 600px;
+        
     }
 
     .painting-item img {
